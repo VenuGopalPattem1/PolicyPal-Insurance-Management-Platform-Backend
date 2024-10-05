@@ -3,140 +3,145 @@
 
 ## Overview
 - **Description:**  
-  PolicyPal is a health insurance management system where users can register for available insurance plans.
+  PolicyPal is a health insurance management system where users can register and apply for available insurance plans.
+
 - **Architecture:**  
-  Developed using microservices architecture, the application consists of different modules, each handling specific services.
-- ## Features
+  Developed using microservices architecture, the application consists of different modules, each handling specific services to ensure scalability and maintainability.
 
-- **Modular Architecture**: Built with microservices to ensure scalability and ease of maintenance.
-- **Secure Authentication**: Utilizes JWT and OAuth2 for secure user authentication and authorization.
-- **Interactive API Documentation**: Swagger integration for easy API exploration and testing.
-- **Dynamic Data Handling**: Uses Spring Data JPA for dynamic table generation and database interactions.
-- **Centralized Configuration and Monitoring**: Implements Eureka Server, API Gateway, Config Server, and Admin Server for efficient service management.
-- **Scheduled Tasks and Batch Processing**: Automates routine tasks and handles large data processing efficiently.
-- **Comprehensive Testing Tools**: Integrates Postman for endpoint testing.
-- **Dynamic Content Generation**: Generates PDFs and Excel sheets based on database data.
-- **Email Notifications**: Sends dynamic emails to users using Java Mail Sender.
+## Features
 
-- **Modules:**
-  - Application Registration Module
-  - Data Collection Module
-  - Eligibility Determination Module
-  - Correspondence Module
-  - Benefit Issuance Module
-  - Reports Module
-  - Admin Module
+- **Modular Architecture:** Built with microservices to ensure scalability and ease of maintenance.
+- **Secure Authentication:** Utilizes JWT and OAuth2 for secure user authentication and authorization.
+- **Interactive API Documentation:** Swagger integration for easy API exploration and testing.
+- **Dynamic Data Handling:** Uses Spring Data JPA for dynamic table generation and database interactions.
+- **Centralized Configuration and Monitoring:** Implements Eureka Server, API Gateway, Config Server, and Admin Server for efficient service management.
+- **Scheduled Tasks and Batch Processing:** Automates routine tasks and handles large data processing efficiently.
+- **Comprehensive Testing Tools:** Integrates Postman for endpoint testing.
+- **Dynamic Content Generation:** Generates PDFs and Excel sheets based on database data.
+- **Email Notifications:** Sends dynamic emails to users using Java Mail Sender.
+
+### Modules
+1. **Application Registration Module:**  
+   Allows users to register and apply for health insurance policies using personal data such as Aadhar numbers. Eligible users are verified before proceeding with the application process.
+
+2. **Data Collection Module:**  
+   After successful registration, users receive an Application Registration ID to generate a Case Number. This Case Number allows users to submit detailed information to verify their eligibility for specific policies.
+
+3. **Eligibility Determination Module:**  
+   This module validates the collected user data against policy conditions. If all conditions are met, the user is deemed eligible for the selected health insurance policy.
+
+4. **Correspondence Module:**  
+   Sends automated email notifications to users regarding policy approval or denial. Emails include PDF attachments generated dynamically based on the Eligibility Determination results. Multithreading is used for efficient email and report generation.
+
+5. **Benefit Issuance Module:**  
+   For eligible users, an Excel sheet is generated containing the details of approved citizens. This data is then sent to banks for disbursement of benefits using batch processing.
+
+6. **Reports Module:**  
+   Displays detailed reports on policy applications with various filtering options for admin users.
+
+7. **Admin Module:**  
+   Handles plan creation, updating, and deletion, as well as user data management. Admins can activate or deactivate users and policies.
+
+### Additional Microservices:
+- **Eureka Server:**  
+  Manages service registration and discovery across all microservices.
   
-  Additionally, it includes supporting microservices such as Eureka Server, Config Server, Admin Server, API Gateway, JWT Auth Service, and a Mock Project.
+- **API Gateway:**  
+  Acts as a single entry point for all microservices, managing routing and request authentication using JWT.
   
-- **Access:**  
-  This is an intranet-based application. Users must visit the nearest Meesava or any other office to apply for the insurance policies.
+- **Config Server:**  
+  Centralizes configuration management across all microservices using a Git repository to store configuration properties.
+  
+- **Admin Server:**  
+  Provides a centralized dashboard for monitoring all microservices and accessing actuator endpoints.
 
-## Modules
+- **Auth Server:**  
+  Manages user authentication and issues JWT tokens for secure communication between microservices.
 
-### Admin Module
-- **Responsibilities:**  
-  - Plan creation, updating, and deletion.
-  - User data management (creation, updating, and deletion).
-  - Change the status of users and plans (active/inactive).
+## Architecture Diagram
 
-### Application Registration Module
-- **Functionality:**  
-  - Users provide their data to apply for policies.
-  - Determines user eligibility based on their Aadhar number.
-  - Only users belonging to the specific state government can apply.
+_Consider adding a visual diagram here to represent the microservices architecture and their interactions._
 
-### Data Collection Module
-- **Functionality:**  
-  - After successful registration, users receive an Application Registration ID to generate a Case Number.
-  - Users submit detailed information to verify eligibility for policies.
-  - Allows users to review and cross-check their submitted details based on the Case Number.
-
-### Eligibility Determination Module
-- **Functionality:**  
-  - Checks user eligibility based on the data collected in the Data Collection Module.
-  - Logic is implemented to validate user data against policy conditions.
-  - If all conditions are met, users are deemed eligible for the policy.
-
-### Correspondence Module
-- **Functionality:**  
-  - Sends emails with PDF attachments to users based on approval or denial from the Eligibility Determination Module.
-  - Utilizes multithreading for efficient email and report generation.
-  - Implements the Executable framework for multi-threading.
-
-### Benefit Issuance Module
-- **Functionality:**  
-  - Creates an Excel sheet with data of citizens approved for policies.
-  - Utilizes batch processing to generate the Excel sheet.
-  - The sheet is sent to banks for disbursement of benefits to citizens.
-
-### Reports Module
-- **Functionality:**  
-  - Displays all applications for the plans with filtering options.
-
-## Microservice Projects
-
-### Eureka Server
-- **Description:**  
-  Created using Netflix Eureka Server dependency, it serves as a registration and discovery server for microservices.
-
-### Config Server
-- **Description:**  
-  Utilizes Spring Cloud Config Server to manage common application properties in a centralized GitLab repository.
-
-### Admin Server
-- **Description:**  
-  Created using Spring Cloud Admin Server dependency to monitor and access the actuators of all microservices.
-
-### API Gateway
-- **Description:**  
-  Acts as a single entry and exit point for all microservices.
-  - Configures URLs for accessing various services.
-  - Implements JWT Token security for request authentication.
-
-### Auth Server
-- **Description:**  
-  Handles user authentication.
-  - Generates a JWT token upon successful authentication.
-  - Provides user registration functionality.
+---
 
 ## Tech Stack
 
 ### Build Tool
-- **Maven**: Manages project structure and dependencies.
+- **Maven:** Manages project structure and dependencies.
 
 ### Backend
-- **Java**: Core programming language.
-- **Spring Boot**: Framework for building microservices.
-- **Spring REST**: Facilitates creating RESTful endpoints.
-- **Spring Security**: Implements security features.
-- **Spring Data JPA**: Handles database interactions and dynamic table generation.
-- **Spring Batch**: Manages batch processing tasks.
-- **Spring Scheduling**: Schedules tasks to run at specific times.
+- **Java:** Core programming language.
+- **Spring Boot:** Framework for building microservices.
+- **Spring REST:** Facilitates creating RESTful endpoints.
+- **Spring Security:** Implements authentication and authorization features.
+- **Spring Data JPA:** Handles database interactions and dynamic table generation.
+- **Spring Batch:** Manages batch processing tasks for large-scale data operations.
+- **Spring Scheduling:** Schedules tasks to run at specific times.
 
 ### Security
-- **JWT (JSON Web Tokens)**: Creates tokens for authenticated users.
-- **OAuth2 Resource Server**: Validates JWT tokens for each request.
+- **JWT (JSON Web Tokens):** Creates tokens for authenticated users.
+- **OAuth2 Resource Server:** Validates JWT tokens for every incoming request.
 
 ### Database
-- **MySQL**: Relational database management system.
+- **MySQL:** Relational database management system.
 
 ### API Documentation & Testing
-- **Swagger**: Provides interactive API documentation and endpoint testing.
-- **Postman**: Used for endpoint testing.
+- **Swagger:** Provides interactive API documentation and endpoint testing.
+- **Postman:** Used for manual endpoint testing.
 
 ### Other Tools & Libraries
-- **Java Mail Sender**: Sends dynamic emails to users.
-- **iText API**: Generates PDFs based on dynamic data.
-- **OpenPDF**: Alternative for PDF creation.
-- **Apache POI**: Creates Excel sheets from database data.
+- **Java Mail Sender:** Sends dynamic emails to users.
+- **iText API:** Generates PDFs based on dynamic data.
+- **OpenPDF:** Alternative library for PDF creation.
+- **Apache POI:** Creates Excel sheets from database data for batch processing tasks.
 
 ### Microservices Management
-- **Eureka Server**: Service registration and discovery.
-- **API Gateway**: Acts as a single entry point for all endpoints.
-- **Config Server**: Centralizes common properties in `application.properties`.
-- **Admin Server**: Centralized monitoring of all microservices.
+- **Eureka Server:** Manages service registration and discovery.
+- **API Gateway:** Acts as a centralized entry point for requests and enforces JWT-based security.
+- **Config Server:** Centralizes configuration across services using a common Git repository.
+- **Admin Server:** Monitors all microservices and their health status.
 
+## Getting Started
 
-## Conclusion
-PolicyPal is designed to streamline the insurance registration process while ensuring that only eligible users can access health insurance plans. Its modular structure and use of microservices provide a robust, scalable solution for managing health insurance applications.
+### Prerequisites
+- JDK 11 or higher
+- Maven
+- MySQL
+
+### Installation
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-repository-url.git
+Configure the database in application.properties.
+Start the Eureka Server:
+bash
+Copy code
+cd eureka-server
+mvn spring-boot:run
+Start the Config Server:
+bash
+Copy code
+cd config-server
+mvn spring-boot:run
+Start each microservice:
+bash
+Copy code
+cd microservice-name
+mvn spring-boot:run
+Open localhost:<gateway-port>/swagger-ui/ to explore APIs via Swagger UI.
+API Example
+Here’s an example of a typical API request for the Application Registration Module:
+
+bash
+Copy code
+POST /api/register
+{
+  "name": "John Doe",
+  "aadharNumber": "1234-5678-9012",
+  "email": "johndoe@example.com"
+}
+License
+Specify your project's license here, if applicable.
+
+Conclusion
+PolicyPal is a modular, microservices-based insurance management application that streamlines the health insurance registration process. By leveraging the latest technologies in security, batch processing, and automation, it ensures a smooth and scalable system for managing citizen insurance applications.
