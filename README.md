@@ -4,7 +4,7 @@
 ## Overview
 - **Description:**  
   PolicyPal is a health insurance management system where users can register for available insurance plans.
-  
+  ![Alt text]("C:\Users\venuv\Pictures\Screenshots\Screenshot 2024-09-28 201139.png")
 - **Architecture:**  
   Developed using microservices architecture, the application consists of different modules, each handling specific services.
 - ## Features
