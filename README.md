@@ -111,37 +111,7 @@ _Consider adding a visual diagram here to represent the microservices architectu
 ### Installation
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-repository-url.git
-Configure the database in application.properties.
-Start the Eureka Server:
-bash
-Copy code
-cd eureka-server
-mvn spring-boot:run
-Start the Config Server:
-bash
-Copy code
-cd config-server
-mvn spring-boot:run
-Start each microservice:
-bash
-Copy code
-cd microservice-name
-mvn spring-boot:run
-Open localhost:<gateway-port>/swagger-ui/ to explore APIs via Swagger UI.
-API Example
-Here’s an example of a typical API request for the Application Registration Module:
-
-bash
-Copy code
-POST /api/register
-{
-  "name": "John Doe",
-  "aadharNumber": "1234-5678-9012",
-  "email": "johndoe@example.com"
-}
-License
-Specify your project's license here, if applicable.
+   git clone [https://github.com/your-repository-url.git](https://github.com/VenuGopalPattem1/PolicyPal-Insurance-SpringBoot-Backend.git)
 
 Conclusion
 PolicyPal is a modular, microservices-based insurance management application that streamlines the health insurance registration process. By leveraging the latest technologies in security, batch processing, and automation, it ensures a smooth and scalable system for managing citizen insurance applications.
