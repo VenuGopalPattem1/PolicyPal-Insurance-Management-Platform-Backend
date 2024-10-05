@@ -146,6 +146,3 @@ graph TD
 1. Clone the repository:
    ```bash
    git clone https://github.com/VenuGopalPattem1/PolicyPal-Insurance-SpringBoot-Backend.git
-
-Conclusion
-PolicyPal is a modular, microservices-based insurance management application that streamlines the health insurance registration process. By leveraging the latest technologies in security, batch processing, and automation, it ensures a smooth and scalable system for managing citizen insurance applications.
