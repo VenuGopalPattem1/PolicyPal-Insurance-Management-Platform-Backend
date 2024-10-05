@@ -89,8 +89,8 @@
   Handles user authentication.
   - Generates a JWT token upon successful authentication.
   - Provides user registration functionality.
-  - ## Tech Stack
-----------------
+  - 
+## Tech Stack
 
 - **Maven:**  
   A powerful project management tool that helps in building and managing Java-based projects. It simplifies dependency management, project structure, and builds process.
