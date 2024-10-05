@@ -111,7 +111,7 @@
 ### Architecture Diagram
 
 ```mermaid
-graph TD
+graph LR
     A[Client Layer] -->|REST Calls| B[API Gateway]
     B -->|Service Discovery| C[Eureka Server]
     B -->|Config Management| D[Config Server]
@@ -147,5 +147,3 @@ graph TD
     G -->|Email Notifications| Q
     I -->|PDF Generation| R
     K -->|Excel Generation| S
-
-
