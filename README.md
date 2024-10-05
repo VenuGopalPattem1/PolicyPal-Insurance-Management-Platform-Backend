@@ -58,85 +58,51 @@
 - **Auth Server:**  
   Manages user authentication and issues JWT tokens for secure communication between microservices.
 
-## Architecture Diagram
+## Tech Stack
 
-```mermaid
-graph TD
-    A[Client Layer] -->|REST Calls| B[API Gateway]
-    B -->|Service Discovery| C[Eureka Server]
-    B -->|Config Management| D[Config Server]
-    B -->|Monitoring| E[Admin Server]
-    B -->|Authentication| F[Auth Server]
-    
-    C --> G[Application Registration Service]
-    C --> H[Data Collection Service]
-    C --> I[Eligibility Determination Service]
-    C --> J[Correspondence Service]
-    C --> K[Benefit Issuance Service]
-    C --> L[Reports Service]
-    C --> M[Admin Service]
+### Build Tool
+- **Maven:** Manages project structure and dependencies.
 
-    G -->|CRUD Operations| N[MySQL Database]
-    H -->|CRUD Operations| N
-    I -->|CRUD Operations| N
-    J -->|CRUD Operations| N
-    K -->|CRUD Operations| N
-    L -->|CRUD Operations| N
-    M -->|CRUD Operations| N
-    
-    subgraph "Support Tools"
-        O[Swagger]
-        P[Postman]
-        Q[Java Mail Sender]
-        R[OpenPDF]
-        S[Apache POI]
-    end
+### Backend
+- **Java:** Core programming language.
+- **Spring Boot:** Framework for building microservices.
+- **Spring REST:** Facilitates creating RESTful endpoints.
+- **Spring Security:** Implements authentication and authorization features.
+- **Spring Data JPA:** Handles database interactions and dynamic table generation.
+- **Spring Batch:** Manages batch processing tasks for large-scale data operations.
+- **Spring Scheduling:** Schedules tasks to run at specific times.
 
+### Security
+- **JWT (JSON Web Tokens):** Creates tokens for authenticated users.
+- **OAuth2 Resource Server:** Validates JWT tokens for every incoming request.
 
+### Database
+- **MySQL:** Relational database management system.
 
+### API Documentation & Testing
+- **Swagger:** Provides interactive API documentation and endpoint testing.
+- **Postman:** Used for manual endpoint testing.
 
-Tech Stack
-Build Tool
-Maven: Manages project structure and dependencies.
-Backend
-Java: Core programming language.
-Spring Boot: Framework for building microservices.
-Spring REST: Facilitates creating RESTful endpoints.
-Spring Security: Implements authentication and authorization features.
-Spring Data JPA: Handles database interactions and dynamic table generation.
-Spring Batch: Manages batch processing tasks for large-scale data operations.
-Spring Scheduling: Schedules tasks to run at specific times.
-Security
-JWT (JSON Web Tokens): Creates tokens for authenticated users.
-OAuth2 Resource Server: Validates JWT tokens for every incoming request.
-Database
-MySQL: Relational database management system.
-API Documentation & Testing
-Swagger: Provides interactive API documentation and endpoint testing.
-Postman: Used for manual endpoint testing.
-Other Tools & Libraries
-Java Mail Sender: Sends dynamic emails to users.
-iText API: Generates PDFs based on dynamic data.
-OpenPDF: Alternative library for PDF creation.
-Apache POI: Creates Excel sheets from database data for batch processing tasks.
-Microservices Management
-Eureka Server: Manages service registration and discovery.
-API Gateway: Acts as a centralized entry point for requests and enforces JWT-based security.
-Config Server: Centralizes configuration across services using a common Git repository.
-Admin Server: Monitors all microservices and their health status.
-Getting Started
-Prerequisites
-JDK 11 or higher
-Maven
-MySQL
-Installation
-Clone the repository:
-bash
-Copy code
-git clone https://github.com/VenuGopalPattem1/PolicyPal-Insurance-SpringBoot-Backend.git
-    
-    B -->|API Docs| O
-    B -->|API Testing| P
-    G -->|Email Notifications| Q
-    I -->|PDF Generation| R
-    K -->|Excel Generation| S
+### Other Tools & Libraries
+- **Java Mail Sender:** Sends dynamic emails to users.
+- **iText API:** Generates PDFs based on dynamic data.
+- **OpenPDF:** Alternative library for PDF creation.
+- **Apache POI:** Creates Excel sheets from database data for batch processing tasks.
+
+### Microservices Management
+- **Eureka Server:** Manages service registration and discovery.
+- **API Gateway:** Acts as a centralized entry point for requests and enforces JWT-based security.
+- **Config Server:** Centralizes configuration across services using a common Git repository.
+- **Admin Server:** Monitors all microservices and their health status.
+
+## Getting Started
+
+### Prerequisites
+- JDK 11 or higher
+- Maven
+- MySQL
+
+### Installation
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/VenuGopalPattem1/PolicyPal-Insurance-SpringBoot-Backend.git
