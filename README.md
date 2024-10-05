@@ -7,7 +7,18 @@
   
 - **Architecture:**  
   Developed using microservices architecture, the application consists of different modules, each handling specific services.
-  
+- ## Features
+
+- **Modular Architecture**: Built with microservices to ensure scalability and ease of maintenance.
+- **Secure Authentication**: Utilizes JWT and OAuth2 for secure user authentication and authorization.
+- **Interactive API Documentation**: Swagger integration for easy API exploration and testing.
+- **Dynamic Data Handling**: Uses Spring Data JPA for dynamic table generation and database interactions.
+- **Centralized Configuration and Monitoring**: Implements Eureka Server, API Gateway, Config Server, and Admin Server for efficient service management.
+- **Scheduled Tasks and Batch Processing**: Automates routine tasks and handles large data processing efficiently.
+- **Comprehensive Testing Tools**: Integrates Postman for endpoint testing.
+- **Dynamic Content Generation**: Generates PDFs and Excel sheets based on database data.
+- **Email Notifications**: Sends dynamic emails to users using Java Mail Sender.
+
 - **Modules:**
   - Application Registration Module
   - Data Collection Module
@@ -89,18 +100,6 @@
   Handles user authentication.
   - Generates a JWT token upon successful authentication.
   - Provides user registration functionality.
-  - 
-## Features
-
-- **Modular Architecture**: Built with microservices to ensure scalability and ease of maintenance.
-- **Secure Authentication**: Utilizes JWT and OAuth2 for secure user authentication and authorization.
-- **Interactive API Documentation**: Swagger integration for easy API exploration and testing.
-- **Dynamic Data Handling**: Uses Spring Data JPA for dynamic table generation and database interactions.
-- **Centralized Configuration and Monitoring**: Implements Eureka Server, API Gateway, Config Server, and Admin Server for efficient service management.
-- **Scheduled Tasks and Batch Processing**: Automates routine tasks and handles large data processing efficiently.
-- **Comprehensive Testing Tools**: Integrates Postman for endpoint testing.
-- **Dynamic Content Generation**: Generates PDFs and Excel sheets based on database data.
-- **Email Notifications**: Sends dynamic emails to users using Java Mail Sender.
 
 ## Tech Stack
 
