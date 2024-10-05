@@ -109,6 +109,7 @@
    
 ## Architecture Diagram
 
+mermaid
 graph LR
     A[Client Layer] -->|REST Calls| B[API Gateway]
     B -->|Service Discovery| C[Eureka Server]
