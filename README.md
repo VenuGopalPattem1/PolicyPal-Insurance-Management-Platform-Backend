@@ -90,62 +90,54 @@
   - Generates a JWT token upon successful authentication.
   - Provides user registration functionality.
   - 
+## Features
+
+- **Modular Architecture**: Built with microservices to ensure scalability and ease of maintenance.
+- **Secure Authentication**: Utilizes JWT and OAuth2 for secure user authentication and authorization.
+- **Interactive API Documentation**: Swagger integration for easy API exploration and testing.
+- **Dynamic Data Handling**: Uses Spring Data JPA for dynamic table generation and database interactions.
+- **Centralized Configuration and Monitoring**: Implements Eureka Server, API Gateway, Config Server, and Admin Server for efficient service management.
+- **Scheduled Tasks and Batch Processing**: Automates routine tasks and handles large data processing efficiently.
+- **Comprehensive Testing Tools**: Integrates Postman for endpoint testing.
+- **Dynamic Content Generation**: Generates PDFs and Excel sheets based on database data.
+- **Email Notifications**: Sends dynamic emails to users using Java Mail Sender.
+
 ## Tech Stack
 
-- **Maven:**  
-  A powerful project management tool that helps in building and managing Java-based projects. It simplifies dependency management, project structure, and builds process.
+### Build Tool
+- **Maven**: Manages project structure and dependencies.
 
-- **Database:**  
-  **MySQL**  
-  An open-source relational database management system. It provides reliable storage, efficient data retrieval, and is widely used for web applications.
+### Backend
+- **Java**: Core programming language.
+- **Spring Boot**: Framework for building microservices.
+- **Spring REST**: Facilitates creating RESTful endpoints.
+- **Spring Security**: Implements security features.
+- **Spring Data JPA**: Handles database interactions and dynamic table generation.
+- **Spring Batch**: Manages batch processing tasks.
+- **Spring Scheduling**: Schedules tasks to run at specific times.
 
-- **Spring REST:**  
-  A part of the Spring framework that simplifies the development of RESTful web services. It allows for easy integration of various HTTP methods and makes it straightforward to handle requests and responses.
+### Security
+- **JWT (JSON Web Tokens)**: Creates tokens for authenticated users.
+- **OAuth2 Resource Server**: Validates JWT tokens for each request.
 
-- **Swagger:**  
-  A framework for API documentation that provides a user-friendly interface for testing API endpoints. It generates interactive documentation and helps developers understand the API's capabilities.
+### Database
+- **MySQL**: Relational database management system.
 
-- **Postman:**  
-  An API client used for testing APIs by sending requests and analyzing responses. It allows developers to quickly prototype and test their endpoints during development.
+### API Documentation & Testing
+- **Swagger**: Provides interactive API documentation and endpoint testing.
+- **Postman**: Used for endpoint testing.
 
-- **JWT (JSON Web Tokens):**  
-  A compact, URL-safe means of representing claims to be transferred between two parties. It allows for secure transmission of information and is used for authentication and authorization in your application.
+### Other Tools & Libraries
+- **Java Mail Sender**: Sends dynamic emails to users.
+- **iText API**: Generates PDFs based on dynamic data.
+- **OpenPDF**: Alternative for PDF creation.
+- **Apache POI**: Creates Excel sheets from database data.
 
-- **OAuth2 Resource Server:**  
-  A framework that provides a way to secure your API endpoints. It validates incoming JWT tokens to ensure that only authenticated users can access protected resources.
-
-- **Spring Data JPA:**  
-  Part of the Spring ecosystem that provides a simplified approach to data access. It offers powerful data manipulation capabilities, including dynamic table generation and object-relational mapping.
-
-- **Spring Security:**  
-  A comprehensive security framework for Java applications that provides authentication and authorization features. It allows for the implementation of complex security requirements in a declarative manner.
-
-- **Java Mail Sender:**  
-  A part of the Spring framework that simplifies email sending in Java applications. It allows for the dynamic composition and sending of emails to users, which is essential for notifying them about application status.
-
-- **OpenPDF:**  
-  A Java library for creating and editing PDF documents. It allows your application to generate PDF reports based on user data dynamically, facilitating easier communication of important information.
-
-- **Scheduling:**  
-  A feature of Spring that allows for the execution of tasks at specific times or intervals. It is useful for automating routine processes, such as sending reports or notifications.
-
-- **Batch Processing & iText API:**  
-  These technologies are used to process large volumes of data and create Excel sheets based on database information. They enhance performance and efficiency when generating reports or exporting data.
-
-- **Eureka Server:**  
-  A service registry for microservices that enables service registration and discovery. It allows your application to locate other services in a dynamic environment, ensuring better scalability and resilience.
-
-- **API Gateway:**  
-  Serves as a single entry point for all microservices, handling incoming requests and routing them to the appropriate service. It also provides a layer of security and can enforce policies, such as rate limiting and authentication.
-
-- **Config Server:**  
-  Centralizes the management of configuration properties for your microservices. It allows for externalized configuration, making it easier to manage and change configurations without redeploying services.
-
-- **Admin Server:**  
-  Provides a web-based interface for monitoring and managing all registered microservices. It allows you to view the status of services, manage their health, and access various metrics for performance monitoring.
-
-- **Spring Cloud:**  
-  A collection of tools for microservices architecture that helps with service discovery, configuration management, and circuit breakers. It simplifies building distributed systems.
+### Microservices Management
+- **Eureka Server**: Service registration and discovery.
+- **API Gateway**: Acts as a single entry point for all endpoints.
+- **Config Server**: Centralizes common properties in `application.properties`.
+- **Admin Server**: Centralized monitoring of all microservices.
 
 
 ## Conclusion
