@@ -109,7 +109,6 @@
 
 
 ### Architecture Diagram
-
 ```mermaid
 graph LR
     A[Client Layer] -->|REST Calls| B[API Gateway]
