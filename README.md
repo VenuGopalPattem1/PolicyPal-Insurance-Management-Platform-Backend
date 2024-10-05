@@ -108,7 +108,8 @@
    git clone https://github.com/VenuGopalPattem1/PolicyPal-Insurance-SpringBoot-Backend.git
 
 
-### Architecture Diagram
+## Architecture Diagram
+
 ```mermaid
 graph LR
     A[Client Layer] -->|REST Calls| B[API Gateway]
